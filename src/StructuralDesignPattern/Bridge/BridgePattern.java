@@ -27,7 +27,7 @@ public class BridgePattern {
 //抽象产品
 abstract class Product {
     private String name;
-    protected Color color;//抽象颜色，在具体产品汇总调用具体颜色
+    protected Color color;//抽象颜色属性，在具体产品中根据传入的值设置具体的颜色
 
     public void setName(String name) {
         this.name = name;
