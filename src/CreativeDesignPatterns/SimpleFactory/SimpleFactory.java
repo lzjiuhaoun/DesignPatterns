@@ -1,4 +1,4 @@
-package CreativeDesignPatterns;
+package CreativeDesignPatterns.SimpleFactory;
 
 /**
  * ClassName: SimpleFactory
