@@ -43,7 +43,7 @@ public class CompositePattern {
         //循环打印子组件的各个结点
         for (AbstractFile child : children) {
             //存在当前节点时文件夹的情况，就要递归打印该节点
-            printAbstractFile(child);
+            printAbstractFile(child); //【递归调用，重要】
         }
     }
 
