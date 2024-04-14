@@ -17,10 +17,13 @@ public class CompositePattern {
         AbstractFile root = new Folder("root");
         AbstractFile folderA = new Folder("文件夹A");
         AbstractFile fileB = new File("文件B");
-
+        AbstractFile folderC = new Folder("文件夹C");
+        AbstractFile fileD = new File("文件D");
         //文件夹添加子组件(文件或文件夹)
         System.out.println(root.Add(folderA)); //true
         System.out.println(root.Add(fileB)); //true
+        System.out.println(folderA.Add(folderC)); //true
+        System.out.println(folderA.Add(fileD)); //true
         //打印所有文件夹
         printAbstractFile(root);
         //文件不能添加子组件(下面方法执行都为false)
@@ -39,7 +42,8 @@ public class CompositePattern {
         }
         //循环打印子组件的各个结点
         for (AbstractFile child : children) {
-            child.printName();
+            //存在当前节点时文件夹的情况，就要递归打印该节点
+            printAbstractFile(child);
         }
     }
 
