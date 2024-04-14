@@ -21,7 +21,7 @@ public class ChainOfResponsibility {
     }
 }
 
-
+//处理者
 abstract class Handler {
     protected Handler next; //继任者
 
@@ -33,6 +33,7 @@ abstract class Handler {
     public abstract void HandRequest(int request);
 }
 
+//继任者1
 class FuDaoYuan extends Handler {
     //辅导员审批 <7
     @Override
@@ -49,6 +50,7 @@ class FuDaoYuan extends Handler {
     }
 }
 
+//继任者2
 class YuanZhang extends Handler {
     //校长审批 <14
     @Override
