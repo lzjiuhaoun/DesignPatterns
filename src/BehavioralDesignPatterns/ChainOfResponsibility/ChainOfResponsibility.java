@@ -1,4 +1,4 @@
-package BehavioralDesignPatterns;
+package BehavioralDesignPatterns.ChainOfResponsibility;
 
 /**
  * ClassName: ChainOfResponsibility
