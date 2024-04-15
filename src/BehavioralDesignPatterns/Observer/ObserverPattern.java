@@ -17,7 +17,7 @@ public class ObserverPattern {
         ConcreteObserver 张三 = new ConcreteObserver("张三", subjectA);
         ConcreteObserver 李四 = new ConcreteObserver("李四", subjectA);
         ConcreteObserver 王五 = new ConcreteObserver("王五", subjectA);
-
+        subjectA.Detach(王五);
         subjectA.setState("2024年4月15日 更新了");
     }
 }
