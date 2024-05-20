@@ -10,19 +10,19 @@ package StructuralDesignPattern.Decorator;
  */
 public class DecoratorPattern {
     public static void main(String[] args) {
-        Person lzj = new Student("lzj");
-        lzj.Operation(); //执行原本的职责
-        System.out.println("----------------------------------------");
-        Person decoratorA = new DecoratorA(lzj);
-        decoratorA.Operation(); //执行原本的职责和装饰器A的职责
-        System.out.println("----------------------------------------");
+//        Person lzj = new Student("lzj");
+//        lzj.Operation(); //执行原本的职责
+//        System.out.println("----------------------------------------");
+//        Person decoratorA = new DecoratorA(lzj);
+//        decoratorA.Operation(); //执行原本的职责和装饰器A的职责
+//        System.out.println("----------------------------------------");
         //法一： 上面这样写，是用 装饰器的职责+原本的职责，并不是我们想要的为原本的给一个对象添加额外的职责，可以修改为：
-        lzj = new DecoratorB(lzj); //lzj实际上是DecoratorB对象(DecoratorB中含有Student.lzj)
-        lzj = new DecoratorA(lzj); //lzj实际上是DecoratorA对象(DecoratorA中含有DecoratorB.lzj)
-        lzj.Operation(); //原理就是套娃（栈执行策略）DecoratorA.Operation{DecoratorB.Operation[Student.Operation]}
-        System.out.println("----------------------------------------");
+//        lzj = new DecoratorB(lzj); //踢足球
+//        lzj = new DecoratorA(lzj); //写作业
+//        lzj.Operation(); //{[(学习)踢足球]写作业} 先调用"写作业"操作，在"写作业"操作中会调用到“[(学习)踢足球]”操作
         //法二：对象链
-        Person lisi = new DecoratorB(new DecoratorA(new Student("lisi")));
+//        Person lisi = new DecoratorB(new DecoratorA(new Student("lisi")));//学习、写作业、踢足球
+        Person lisi = new DecoratorA(new DecoratorB(new Student("lisi")));//学习、踢足球、写作业
         lisi.Operation();
 
     }
